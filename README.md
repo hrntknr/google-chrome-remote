@@ -6,14 +6,14 @@ docker run -it --rm --memory 512mb ghcr.io/hrntknr/google-chrome-remote:latest
 
 ## Environment
 
-| Name              | Default value                         | Description                        |
-| ----------------- | ------------------------------------- | ---------------------------------- |
-| VNC_PASSWORD      |                                       | Password for VNC connection        |
-| SCREEN_WIDTH      | 1280                                  | Set the screen width in pixels     |
-| SCREEN_HEIGHT     | 720                                   | Set the screen height in pixels    |
-| SCREEN_DEPTH      | 24                                    | Set the screen color depth in bits |
-| CHROME_PROXY_OPTS | -l 0.0.0.0:9222 -r 127.0.0.1:19222    | Proxy options for Chrome           |
-| CHROME_OPTS       | [Read entrypoint.sh](./entrypoint.sh) | Startup options for Chrome         |
+| Name              | Default value                                        | Description                        |
+| ----------------- | ---------------------------------------------------- | ---------------------------------- |
+| VNC_PASSWORD      |                                                      | Password for VNC connection        |
+| SCREEN_WIDTH      | 1280                                                 | Set the screen width in pixels     |
+| SCREEN_HEIGHT     | 720                                                  | Set the screen height in pixels    |
+| SCREEN_DEPTH      | 24                                                   | Set the screen color depth in bits |
+| CHROME_PROXY_OPTS | -l 0.0.0.0:9222 -r 127.0.0.1:19222                   | Proxy options for Chrome           |
+| CHROME_OPTS       | [Read entrypoint.sh](./chrome-release/entrypoint.sh) | Startup options for Chrome         |
 
 ## Expose ports
 

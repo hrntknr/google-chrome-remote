@@ -8,10 +8,10 @@ function build {
 
   DOCKER_URL="$REGISTRY/$IMAGE_NAME:${tag,,}-$CHROME_VERSION"
 
-  if docker manifest inspect "$DOCKER_URL"; then
-    echo "$DOCKER_URL already exists"
-    continue
-  fi
+  # if docker manifest inspect "$DOCKER_URL"; then
+  #   echo "$DOCKER_URL already exists"
+  #   continue
+  # fi
 
   docker build --build-arg CHROME_BIN_URL="$CHROME_BIN_URL" -t "$DOCKER_URL" chrome-for-testing
   docker push "$DOCKER_URL"
@@ -25,10 +25,10 @@ function build_release {
 
   DOCKER_URL="$REGISTRY/$IMAGE_NAME:$CHROME_VERSION"
 
-  if docker manifest inspect "$DOCKER_URL"; then
-    echo "$DOCKER_URL already exists"
-    continue
-  fi
+  # if docker manifest inspect "$DOCKER_URL"; then
+  #   echo "$DOCKER_URL already exists"
+  #   continue
+  # fi
 
   docker build --build-arg CHROME_RELEASE_VERSION="$CHROME_VERSION" -t "$DOCKER_URL" chrome-release
   docker push "$DOCKER_URL"
