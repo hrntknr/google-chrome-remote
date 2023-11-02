@@ -18,8 +18,7 @@ RUN wget -q https://github.com/wendigo/chrome-protocol-proxy/releases/download/v
 
 ARG CHROME_RELEASE_VERSION
 RUN apt-get update && \
-  CHROME_RELEASE_VERSION=$(apt-cache madison google-chrome-stable | grep "$CHROME_RELEASE_VERSION" | tail -n 1 | awk '{print $3}') \
-  apt-get install -y supervisor x11vnc novnc python3-websockify xvfb pulseaudio fonts-noto-cjk unzip google-chrome-stable=$CHROME_RELEASE_VERSION && \
+  apt-get install -y supervisor x11vnc novnc python3-websockify xvfb pulseaudio fonts-noto-cjk unzip google-chrome-stable=$CHROME_RELEASE_VERSION-1 && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/*
 

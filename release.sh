@@ -36,8 +36,8 @@ function build_release {
   docker push "$REGISTRY/$IMAGE_NAME:latest"
 }
 
+build_release
 tags=("Stable" "Beta" "Dev" "Canary")
 for tag in "${tags[@]}"; do
   build "$tag"
 done
-build_release
