@@ -2,7 +2,9 @@
 
 ## Usage
 
-docker run -it --rm --memory 512mb ghcr.io/hrntknr/google-chrome-remote:latest
+```
+docker run --rm -p 6080:6080 --privileged ghcr.io/hrntknr/google-chrome-remote:latest
+```
 
 ## Environment
 
