@@ -4,7 +4,7 @@ json=$(curl -sf https://googlechromelabs.github.io/chrome-for-testing/last-known
 CHROME_VERSION=$(echo "$json" | jq .channels.Stable.version -r)
 CHROME_URL=$(echo "$json" | jq '.channels.Stable.downloads.chrome[] | select(.platform == "linux64").url' -r)
 
-DOCKER_URL="ghcr.io/hrntknr/google-chrome-remote:$CHROME_VERSION"
+DOCKER_URL="$REGISTRY/$IMAGE_NAME:$CHROME_VERSION"
 
 if docker pull "$DOCKER_URL"; then
   echo "$DOCKER_URL already exists"
